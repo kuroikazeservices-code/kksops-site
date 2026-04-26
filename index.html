@@ -11,144 +11,362 @@
       --ink: #1a1a18;
       --muted: #5f5e5a;
       --border: #d3d1c7;
-      --accent: #0f6e56;
       --bg: #f8f7f3;
+      --blue-accent: #185fa5;
     }
 
     body {
       background: var(--bg);
       color: var(--ink);
-      font-family: 'Georgia', serif;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    header {
-      border-bottom: 1px solid var(--border);
-      padding: 2rem 2.5rem 1.5rem;
+    .site-banner {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      max-height: 280px;
+      background: #060d1f;
+    }
+
+    .site-banner svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-nav {
+      background: #060d1f;
+      border-bottom: 1px solid #1a3a6a;
+      padding: 0.75rem 2.5rem;
       display: flex;
-      align-items: baseline;
-      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .wordmark {
-      font-size: 1.1rem;
-      font-weight: normal;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink);
-    }
-
-    .wordmark span {
-      color: var(--accent);
-    }
-
-    .tagline-header {
+    .site-nav .nav-label {
       font-family: 'Courier New', monospace;
       font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.05em;
+      color: #4a88c0;
+      letter-spacing: 0.1em;
     }
+
+    .site-nav a {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #4a88c0;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+    }
+
+    .site-nav a:hover { color: #a0d4ff; }
 
     main {
       flex: 1;
       max-width: 680px;
       margin: 0 auto;
-      padding: 4rem 2.5rem 3rem;
+      padding: 3.5rem 2.5rem 3rem;
       width: 100%;
     }
 
     .lede {
-      font-size: 1.75rem;
+      font-family: 'Georgia', serif;
+      font-size: 1.65rem;
       line-height: 1.35;
       font-weight: normal;
       color: var(--ink);
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
     }
 
     .lede em {
       font-style: normal;
-      color: var(--accent);
+      color: var(--blue-accent);
     }
 
     .body-copy {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 1rem;
-      line-height: 1.75;
+      font-size: 0.975rem;
+      line-height: 1.8;
       color: var(--muted);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.1rem;
     }
 
     .rule {
       border: none;
       border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
+      margin: 2.25rem 0;
     }
 
     .contact-block {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-size: 0.875rem;
       color: var(--muted);
     }
 
     .contact-block a {
-      color: var(--accent);
+      color: var(--blue-accent);
       text-decoration: none;
     }
 
-    .contact-block a:hover {
-      text-decoration: underline;
-    }
+    .contact-block a:hover { text-decoration: underline; }
 
     footer {
-      border-top: 1px solid var(--border);
+      background: #060d1f;
+      border-top: 1px solid #1a3a6a;
       padding: 1.25rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.75rem;
-      color: var(--muted);
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #4a88c0;
+      letter-spacing: 0.05em;
     }
 
     footer a {
-      color: var(--muted);
+      color: #4a88c0;
       text-decoration: none;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #1a3a6a;
     }
 
-    footer a:hover {
-      color: var(--ink);
-    }
+    footer a:hover { color: #a0d4ff; }
 
     @media (max-width: 600px) {
-      header { padding: 1.5rem; flex-direction: column; gap: 0.25rem; }
-      main { padding: 2.5rem 1.5rem; }
-      footer { padding: 1rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-      .lede { font-size: 1.4rem; }
+      .site-banner { max-height: 160px; }
+      .site-nav { padding: 0.65rem 1.25rem; }
+      main { padding: 2rem 1.5rem; }
+      footer { padding: 1rem 1.25rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .lede { font-size: 1.35rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <p class="wordmark"><span>KKS</span>ops</p>
-    <p class="tagline-header">KuroiKaze Service Operations</p>
-  </header>
+  <div class="site-banner">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" style="background:#060d1f">
+      <defs>
+        <radialGradient id="bgGlow" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#0d1e3a"/>
+          <stop offset="100%" stop-color="#060d1f"/>
+        </radialGradient>
+        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#1a4a8a" stop-opacity="0.18"/>
+          <stop offset="60%" stop-color="#0d2a5a" stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#060d1f" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="speedLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#2589ff" stop-opacity="0"/>
+          <stop offset="40%" stop-color="#2589ff" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#2589ff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="speedMid" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#5aaeff" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#5aaeff" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#5aaeff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="circuitFadeLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8fa8c8" stop-opacity="0.6"/>
+          <stop offset="100%" stop-color="#8fa8c8" stop-opacity="0.08"/>
+        </linearGradient>
+        <linearGradient id="circuitFadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#8fa8c8" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#8fa8c8" stop-opacity="0.6"/>
+        </linearGradient>
+        <linearGradient id="edgeFadeTop" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#4a8fd4" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#4a8fd4" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+        </filter>
+        <filter id="glowFilterSm" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
+        </filter>
+      </defs>
+
+      <rect width="1920" height="1080" fill="url(#bgGlow)"/>
+      <rect x="0" y="0" width="1920" height="3" fill="#1a6fd4" opacity="0.7"/>
+      <rect x="0" y="0" width="1920" height="1" fill="#4aa3ff" opacity="0.9"/>
+
+      <g opacity="0.07" fill="#8fc8f0">
+        <circle cx="60" cy="90" r="2"/><circle cx="120" cy="90" r="2"/><circle cx="180" cy="90" r="2"/><circle cx="240" cy="90" r="2"/><circle cx="300" cy="90" r="2"/><circle cx="360" cy="90" r="2"/><circle cx="420" cy="90" r="2"/><circle cx="480" cy="90" r="2"/>
+        <circle cx="90" cy="145" r="2"/><circle cx="150" cy="145" r="2"/><circle cx="210" cy="145" r="2"/><circle cx="270" cy="145" r="2"/><circle cx="330" cy="145" r="2"/><circle cx="390" cy="145" r="2"/><circle cx="450" cy="145" r="2"/>
+        <circle cx="60" cy="200" r="2"/><circle cx="120" cy="200" r="2"/><circle cx="180" cy="200" r="2"/><circle cx="240" cy="200" r="2"/><circle cx="300" cy="200" r="2"/><circle cx="360" cy="200" r="2"/><circle cx="420" cy="200" r="2"/><circle cx="480" cy="200" r="2"/>
+        <circle cx="90" cy="255" r="2"/><circle cx="150" cy="255" r="2"/><circle cx="210" cy="255" r="2"/><circle cx="270" cy="255" r="2"/><circle cx="330" cy="255" r="2"/><circle cx="390" cy="255" r="2"/><circle cx="450" cy="255" r="2"/>
+        <circle cx="60" cy="310" r="2"/><circle cx="120" cy="310" r="2"/><circle cx="180" cy="310" r="2"/><circle cx="240" cy="310" r="2"/><circle cx="300" cy="310" r="2"/><circle cx="360" cy="310" r="2"/><circle cx="420" cy="310" r="2"/><circle cx="480" cy="310" r="2"/>
+        <circle cx="90" cy="365" r="2"/><circle cx="150" cy="365" r="2"/><circle cx="210" cy="365" r="2"/><circle cx="270" cy="365" r="2"/><circle cx="330" cy="365" r="2"/><circle cx="390" cy="365" r="2"/><circle cx="450" cy="365" r="2"/>
+        <circle cx="60" cy="420" r="2"/><circle cx="120" cy="420" r="2"/><circle cx="180" cy="420" r="2"/><circle cx="240" cy="420" r="2"/><circle cx="300" cy="420" r="2"/><circle cx="360" cy="420" r="2"/><circle cx="420" cy="420" r="2"/>
+        <circle cx="90" cy="475" r="2"/><circle cx="150" cy="475" r="2"/><circle cx="210" cy="475" r="2"/><circle cx="270" cy="475" r="2"/><circle cx="330" cy="475" r="2"/>
+        <circle cx="60" cy="530" r="2"/><circle cx="120" cy="530" r="2"/><circle cx="180" cy="530" r="2"/><circle cx="240" cy="530" r="2"/>
+        <circle cx="1860" cy="90" r="2"/><circle cx="1800" cy="90" r="2"/><circle cx="1740" cy="90" r="2"/><circle cx="1680" cy="90" r="2"/><circle cx="1620" cy="90" r="2"/><circle cx="1560" cy="90" r="2"/><circle cx="1500" cy="90" r="2"/><circle cx="1440" cy="90" r="2"/>
+        <circle cx="1830" cy="145" r="2"/><circle cx="1770" cy="145" r="2"/><circle cx="1710" cy="145" r="2"/><circle cx="1650" cy="145" r="2"/><circle cx="1590" cy="145" r="2"/><circle cx="1530" cy="145" r="2"/><circle cx="1470" cy="145" r="2"/>
+        <circle cx="1860" cy="200" r="2"/><circle cx="1800" cy="200" r="2"/><circle cx="1740" cy="200" r="2"/><circle cx="1680" cy="200" r="2"/><circle cx="1620" cy="200" r="2"/><circle cx="1560" cy="200" r="2"/><circle cx="1500" cy="200" r="2"/>
+        <circle cx="1830" cy="255" r="2"/><circle cx="1770" cy="255" r="2"/><circle cx="1710" cy="255" r="2"/><circle cx="1650" cy="255" r="2"/><circle cx="1590" cy="255" r="2"/><circle cx="1530" cy="255" r="2"/>
+        <circle cx="1860" cy="310" r="2"/><circle cx="1800" cy="310" r="2"/><circle cx="1740" cy="310" r="2"/><circle cx="1680" cy="310" r="2"/><circle cx="1620" cy="310" r="2"/>
+        <circle cx="1830" cy="365" r="2"/><circle cx="1770" cy="365" r="2"/><circle cx="1710" cy="365" r="2"/><circle cx="1650" cy="365" r="2"/>
+        <circle cx="1860" cy="420" r="2"/><circle cx="1800" cy="420" r="2"/><circle cx="1740" cy="420" r="2"/>
+        <circle cx="1830" cy="475" r="2"/><circle cx="1770" cy="475" r="2"/>
+        <circle cx="1860" cy="530" r="2"/>
+      </g>
+
+      <g stroke="url(#circuitFadeLeft)" fill="none">
+        <polyline points="0,180 85,180 85,140 280,140 280,180 480,180 480,220 600,220" stroke-width="1" opacity="0.5"/>
+        <polyline points="0,270 120,270 120,240 340,240 340,310 520,310 520,270 650,270" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="0,380 160,380 160,340 260,340 260,380 420,380 420,420 600,420" stroke-width="1.2" opacity="0.55"/>
+        <polyline points="0,460 90,460 90,500 300,500 300,460 500,460 500,430 640,430" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="0,560 140,560 140,600 320,600 320,560 580,560 580,520 660,520" stroke-width="1" opacity="0.5"/>
+        <polyline points="0,640 100,640 100,680 280,680 280,640 460,640 460,700 580,700" stroke-width="0.8" opacity="0.35"/>
+        <polyline points="0,760 180,760 180,720 360,720 360,760 540,760" stroke-width="1" opacity="0.45"/>
+      </g>
+      <g stroke="#8fa8c8" fill="none" opacity="0.2">
+        <line x1="0" y1="100" x2="350" y2="100" stroke-width="0.5"/>
+        <line x1="0" y1="320" x2="260" y2="320" stroke-width="0.5"/>
+        <line x1="0" y1="440" x2="290" y2="440" stroke-width="0.5"/>
+        <polyline points="0,540 80,540 80,580 200,580" stroke-width="0.5"/>
+        <line x1="0" y1="700" x2="230" y2="700" stroke-width="0.5"/>
+      </g>
+      <g stroke="#8fa8c8" fill="none" opacity="0.22">
+        <line x1="85" y1="140" x2="85" y2="270" stroke-width="0.7"/>
+        <line x1="140" y1="320" x2="140" y2="560" stroke-width="0.7"/>
+        <line x1="280" y1="140" x2="280" y2="640" stroke-width="0.6"/>
+        <line x1="420" y1="380" x2="420" y2="640" stroke-width="0.7"/>
+        <line x1="480" y1="180" x2="480" y2="460" stroke-width="0.6"/>
+      </g>
+
+      <g stroke="url(#circuitFadeRight)" fill="none">
+        <polyline points="1920,180 1835,180 1835,140 1640,140 1640,180 1440,180 1440,220 1320,220" stroke-width="1" opacity="0.5"/>
+        <polyline points="1920,270 1800,270 1800,240 1580,240 1580,310 1400,310 1400,270 1270,270" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="1920,380 1760,380 1760,340 1660,340 1660,380 1500,380 1500,420 1320,420" stroke-width="1.2" opacity="0.55"/>
+        <polyline points="1920,460 1830,460 1830,500 1620,500 1620,460 1420,460 1420,430 1280,430" stroke-width="0.8" opacity="0.4"/>
+        <polyline points="1920,560 1780,560 1780,600 1600,600 1600,560 1340,560 1340,520 1260,520" stroke-width="1" opacity="0.5"/>
+        <polyline points="1920,640 1820,640 1820,680 1640,680 1640,640 1460,640 1460,700 1340,700" stroke-width="0.8" opacity="0.35"/>
+        <polyline points="1920,760 1740,760 1740,720 1560,720 1560,760 1380,760" stroke-width="1" opacity="0.45"/>
+      </g>
+      <g stroke="#8fa8c8" fill="none" opacity="0.2">
+        <line x1="1920" y1="100" x2="1570" y2="100" stroke-width="0.5"/>
+        <line x1="1920" y1="320" x2="1660" y2="320" stroke-width="0.5"/>
+        <line x1="1920" y1="440" x2="1630" y2="440" stroke-width="0.5"/>
+        <line x1="1920" y1="700" x2="1690" y2="700" stroke-width="0.5"/>
+      </g>
+      <g stroke="#8fa8c8" fill="none" opacity="0.22">
+        <line x1="1835" y1="140" x2="1835" y2="270" stroke-width="0.7"/>
+        <line x1="1780" y1="320" x2="1780" y2="560" stroke-width="0.7"/>
+        <line x1="1640" y1="140" x2="1640" y2="640" stroke-width="0.6"/>
+        <line x1="1500" y1="380" x2="1500" y2="640" stroke-width="0.7"/>
+        <line x1="1440" y1="180" x2="1440" y2="460" stroke-width="0.6"/>
+      </g>
+
+      <ellipse cx="960" cy="540" rx="560" ry="320" fill="url(#centerGlow)"/>
+      <rect x="200" y="390" width="1520" height="1.5" fill="url(#speedLeft)" opacity="0.6"/>
+      <rect x="100" y="420" width="1720" height="0.8" fill="url(#speedMid)" opacity="0.4"/>
+      <rect x="300" y="455" width="1320" height="2" fill="url(#speedLeft)" opacity="0.5"/>
+      <rect x="100" y="600" width="1720" height="1.5" fill="url(#speedLeft)" opacity="0.5"/>
+      <rect x="200" y="665" width="1520" height="2" fill="url(#speedLeft)" opacity="0.45"/>
+
+      <circle cx="85" cy="180" r="14" fill="#1a3a6a" opacity="0.5" filter="url(#glowFilter)"/>
+      <circle cx="85" cy="180" r="5" fill="#4aa3ff" opacity="0.9"/>
+      <circle cx="85" cy="180" r="3" fill="#c8e8ff"/>
+      <circle cx="280" cy="140" r="12" fill="#1a3a6a" opacity="0.4" filter="url(#glowFilter)"/>
+      <circle cx="280" cy="140" r="4" fill="#3a8fd4" opacity="0.85"/>
+      <circle cx="480" cy="180" r="10" fill="#1a3a6a" opacity="0.35" filter="url(#glowFilter)"/>
+      <circle cx="480" cy="180" r="4" fill="#2589ff" opacity="0.8"/>
+      <circle cx="140" cy="560" r="16" fill="#1a3a6a" opacity="0.5" filter="url(#glowFilter)"/>
+      <circle cx="140" cy="560" r="5.5" fill="#4aa3ff" opacity="0.9"/>
+      <circle cx="280" cy="640" r="12" fill="#1a3a6a" opacity="0.4" filter="url(#glowFilter)"/>
+      <circle cx="280" cy="640" r="4.5" fill="#3a8fd4" opacity="0.85"/>
+      <g fill="#5aaeff" opacity="0.55">
+        <circle cx="120" cy="270" r="2.5"/><circle cx="260" cy="340" r="2.5"/><circle cx="420" cy="380" r="3"/>
+        <circle cx="500" cy="460" r="2"/><circle cx="580" cy="560" r="2.5"/><circle cx="460" cy="640" r="2"/>
+      </g>
+
+      <circle cx="1835" cy="180" r="14" fill="#1a3a6a" opacity="0.5" filter="url(#glowFilter)"/>
+      <circle cx="1835" cy="180" r="5" fill="#4aa3ff" opacity="0.9"/>
+      <circle cx="1835" cy="180" r="3" fill="#c8e8ff"/>
+      <circle cx="1640" cy="140" r="12" fill="#1a3a6a" opacity="0.4" filter="url(#glowFilter)"/>
+      <circle cx="1640" cy="140" r="4" fill="#3a8fd4" opacity="0.85"/>
+      <circle cx="1440" cy="180" r="10" fill="#1a3a6a" opacity="0.35" filter="url(#glowFilter)"/>
+      <circle cx="1440" cy="180" r="4" fill="#2589ff" opacity="0.8"/>
+      <circle cx="1780" cy="560" r="16" fill="#1a3a6a" opacity="0.5" filter="url(#glowFilter)"/>
+      <circle cx="1780" cy="560" r="5.5" fill="#4aa3ff" opacity="0.9"/>
+      <circle cx="1640" cy="640" r="12" fill="#1a3a6a" opacity="0.4" filter="url(#glowFilter)"/>
+      <circle cx="1640" cy="640" r="4.5" fill="#3a8fd4" opacity="0.85"/>
+      <g fill="#5aaeff" opacity="0.55">
+        <circle cx="1800" cy="270" r="2.5"/><circle cx="1660" cy="340" r="2.5"/><circle cx="1500" cy="380" r="3"/>
+        <circle cx="1420" cy="460" r="2"/><circle cx="1340" cy="560" r="2.5"/><circle cx="1460" cy="640" r="2"/>
+      </g>
+
+      <g stroke="#1a6fd4" fill="none" opacity="0.5">
+        <polyline points="0,0 80,0 80,30 160,30 160,0" stroke-width="1"/>
+        <polyline points="0,0 0,80 30,80 30,160 0,160" stroke-width="1"/>
+        <polyline points="1920,0 1840,0 1840,30 1760,30 1760,0" stroke-width="1"/>
+        <polyline points="1920,0 1920,80 1890,80 1890,160 1920,160" stroke-width="1"/>
+      </g>
+
+      <g stroke="#1a6fd4" fill="none" opacity="0.25">
+        <line x1="680" y1="340" x2="760" y2="340" stroke-width="1.5"/>
+        <line x1="760" y1="340" x2="780" y2="320" stroke-width="1"/>
+        <line x1="780" y1="320" x2="1140" y2="320" stroke-width="1"/>
+        <line x1="1140" y1="320" x2="1160" y2="340" stroke-width="1"/>
+        <line x1="1160" y1="340" x2="1240" y2="340" stroke-width="1.5"/>
+        <line x1="680" y1="740" x2="760" y2="740" stroke-width="1.5"/>
+        <line x1="760" y1="740" x2="780" y2="760" stroke-width="1"/>
+        <line x1="780" y1="760" x2="1140" y2="760" stroke-width="1"/>
+        <line x1="1140" y1="760" x2="1160" y2="740" stroke-width="1"/>
+        <line x1="1160" y1="740" x2="1240" y2="740" stroke-width="1.5"/>
+        <line x1="680" y1="340" x2="680" y2="420" stroke-width="1"/>
+        <line x1="680" y1="660" x2="680" y2="740" stroke-width="1"/>
+        <line x1="1240" y1="340" x2="1240" y2="420" stroke-width="1"/>
+        <line x1="1240" y1="660" x2="1240" y2="740" stroke-width="1"/>
+      </g>
+      <g stroke="#2589ff" fill="none" opacity="0.5">
+        <polyline points="660,355 640,355 640,375" stroke-width="1.5"/>
+        <polyline points="1260,355 1280,355 1280,375" stroke-width="1.5"/>
+        <polyline points="660,725 640,725 640,705" stroke-width="1.5"/>
+        <polyline points="1260,725 1280,725 1280,705" stroke-width="1.5"/>
+      </g>
+      <g filter="url(#glowFilterSm)">
+        <circle cx="640" cy="355" r="5" fill="#2589ff" opacity="0.7"/>
+        <circle cx="1280" cy="355" r="5" fill="#2589ff" opacity="0.7"/>
+        <circle cx="640" cy="725" r="5" fill="#2589ff" opacity="0.7"/>
+        <circle cx="1280" cy="725" r="5" fill="#2589ff" opacity="0.7"/>
+      </g>
+      <circle cx="640" cy="355" r="2.5" fill="#a0d4ff"/>
+      <circle cx="1280" cy="355" r="2.5" fill="#a0d4ff"/>
+      <circle cx="640" cy="725" r="2.5" fill="#a0d4ff"/>
+      <circle cx="1280" cy="725" r="2.5" fill="#a0d4ff"/>
+
+      <text x="960" y="500" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="72" font-weight="700" letter-spacing="6" fill="#e8f2ff" opacity="0.92">KKS</text>
+      <text x="960" y="572" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="28" font-weight="300" letter-spacing="12" fill="#7ab8e8" opacity="0.85">DIGITAL SUPPORT SERVICES</text>
+      <line x1="820" y1="592" x2="1100" y2="592" stroke="#2589ff" stroke-width="0.8" opacity="0.4"/>
+      <text x="960" y="630" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif"
+        font-size="14" font-weight="300" letter-spacing="4" fill="#4a88c0" opacity="0.7">EFFICIENCY  ·  SPEED  ·  RELIABILITY</text>
+
+      <rect x="0" y="0" width="1920" height="60" fill="url(#edgeFadeTop)" opacity="0.8"/>
+      <rect x="0" y="0" width="120" height="1080" fill="#060d1f" opacity="0.3"/>
+      <rect x="1800" y="0" width="120" height="1080" fill="#060d1f" opacity="0.3"/>
+    </svg>
+  </div>
+
+  <nav class="site-nav">
+    <span class="nav-label">KuroiKaze Service Operations</span>
+    <a href="/privacy.html">Privacy Policy</a>
+  </nav>
 
   <main>
     <h1 class="lede">Digital tools for <em>independent operators</em> who don't have time to waste.</h1>
 
     <p class="body-copy">
-      KKSops builds lightweight apps and workflow tools designed for small, 
-      independent service businesses — pet sitters, tradespeople, and solo operators 
+      KKSops builds lightweight apps and workflow tools designed for small,
+      independent service businesses — pet sitters, tradespeople, and solo operators
       who need professional-grade software without enterprise-grade complexity.
     </p>
 
     <p class="body-copy">
-      Our first product is a streamlined invoicing app built specifically for 
-      independent service providers. Simple to set up, honest in its pricing, 
+      Our first product is a streamlined invoicing app built specifically for
+      independent service providers. Simple to set up, honest in its pricing,
       and built to stay out of your way.
     </p>
 
@@ -160,7 +378,7 @@
   </main>
 
   <footer>
-    <span>&copy; 2025 KuroiKaze Service Operations</span>
+    <span>&copy; 2026 KuroiKaze Service Operations</span>
     <a href="/privacy.html">Privacy Policy</a>
   </footer>
 
