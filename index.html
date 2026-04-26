@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KKSops — KuroiKaze Service Operations</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --muted: #5f5e5a;
+      --border: #d3d1c7;
+      --accent: #0f6e56;
+      --bg: #f8f7f3;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 2.5rem 1.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .wordmark {
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .wordmark span {
+      color: var(--accent);
+    }
+
+    .tagline-header {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    main {
+      flex: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem 3rem;
+      width: 100%;
+    }
+
+    .lede {
+      font-size: 1.75rem;
+      line-height: 1.35;
+      font-weight: normal;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .lede em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .body-copy {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    .contact-block {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .contact-block a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+
+    footer a:hover {
+      color: var(--ink);
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 1.5rem; flex-direction: column; gap: 0.25rem; }
+      main { padding: 2.5rem 1.5rem; }
+      footer { padding: 1rem 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+      .lede { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="wordmark"><span>KKS</span>ops</p>
+    <p class="tagline-header">KuroiKaze Service Operations</p>
+  </header>
+
+  <main>
+    <h1 class="lede">Digital tools for <em>independent operators</em> who don't have time to waste.</h1>
+
+    <p class="body-copy">
+      KKSops builds lightweight apps and workflow tools designed for small, 
+      independent service businesses — pet sitters, tradespeople, and solo operators 
+      who need professional-grade software without enterprise-grade complexity.
+    </p>
+
+    <p class="body-copy">
+      Our first product is a streamlined invoicing app built specifically for 
+      independent service providers. Simple to set up, honest in its pricing, 
+      and built to stay out of your way.
+    </p>
+
+    <hr class="rule" />
+
+    <div class="contact-block">
+      <p>Questions or support: <a href="mailto:apps.dev.kks@gmail.com">apps.dev.kks@gmail.com</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <span>&copy; 2025 KuroiKaze Service Operations</span>
+    <a href="/privacy.html">Privacy Policy</a>
+  </footer>
+
+</body>
+</html>
