@@ -45,6 +45,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: relative;
+      z-index: 100;
     }
 
     .site-nav .nav-label {
@@ -54,15 +56,44 @@
       letter-spacing: 0.1em;
     }
 
-    .site-nav a {
+    .nav-menu-toggle {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: #4a88c0;
+      letter-spacing: 0.08em;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-menu-toggle:hover { color: #a0d4ff; }
+
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 2.5rem;
+      background: #060d1f;
+      border: 1px solid #1a3a6a;
+      min-width: 160px;
+      flex-direction: column;
+    }
+
+    .nav-dropdown.open { display: flex; }
+
+    .nav-dropdown a {
       font-family: 'Courier New', monospace;
       font-size: 0.72rem;
       color: #4a88c0;
       text-decoration: none;
       letter-spacing: 0.08em;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #1a3a6a;
     }
 
-    .site-nav a:hover { color: #a0d4ff; }
+    .nav-dropdown a:last-child { border-bottom: none; }
+    .nav-dropdown a:hover { color: #a0d4ff; background: #0d1e3a; }
 
     main {
       flex: 1;
@@ -366,7 +397,12 @@
 
   <nav class="site-nav">
     <span class="nav-label">KuroiKaze Services</span>
-    <a href="/">Home</a>
+    <button class="nav-menu-toggle" onclick="this.nextElementSibling.classList.toggle('open')">Menu +</button>
+    <div class="nav-dropdown">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
   </nav>
 
   <main>
@@ -449,7 +485,7 @@
     <hr class="rule" />
 
     <p style="font-size: 0.8rem; color: var(--muted);">
-      KuroiKaze Services &mdash; Albuquerque, New Mexico
+      KuroiKaze Services, Albuquerque, New Mexico
     </p>
   </main>
 
